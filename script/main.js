@@ -42,19 +42,18 @@ console.log('*** SNACK 3 ***');
 var names = ['Michele', 'Fabio', 'Roberto'];
 var lastNames = ['Forghieri', 'Papagni', 'Marazzini'];
 
-var fullnameList = [];
+console.log( random(names,lastNames));
 
-for (var i = 0; i < 5; i++){
-  var randomNameNumber = Math.floor( Math.random() * ((names.length - 1) - 0 + 1) + 0);
-  var randomLastNameNumber = Math.floor( Math.random() * ((lastNames.length - 1) - 0 + 1) + 0);
-
-  var newFullName = names[randomNameNumber] + ' ' + lastNames[randomLastNameNumber];
-
-  fullnameList.push(newFullName);
+function random (mylist1,mylist2){
+  var randomArray = [];
+  for (i = 0; i < 5; i++){
+    var randomIndex1 = Math.floor( Math.random() * ((mylist1.length - 1) - 0 + 1) + 0);
+    var randomIndex2 = Math.floor( Math.random() * ((mylist1.length - 1) - 0 + 1) + 0);
+    randomArray.push(mylist1[randomIndex1] + ' ' + mylist2[randomIndex2]);
 }
 
-console.log(fullnameList);
-
+  return randomArray;
+}
 
 // JSnack Bonus (non visto insieme e quindi assolutamente facoltativo)
 // Crea un array di numeri interi, ad esempio (1, 4, 2, 15, 120, 17, 3) e fai la somma di tutti gli elementi che sono in posizione dispari. Prova prima senza funzione e poi con funzione.
@@ -62,11 +61,9 @@ console.log(fullnameList);
 
 console.log('*** SNACK 4 ***');
 
-
 var names = ['1', '4', '2' , '15', '120', '17', '3'];
 
 console.log('La somma degli elementi in posizione dispari (partendo da 0) è: ' + dispari (names));
-
 
 function dispari (array){
   var somma = 0;
